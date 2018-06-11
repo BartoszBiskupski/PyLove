@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account</title>
+</head>
+<body>
+<h2>Balance of your account: {{ balance }}$</h2>
+
+<h2>Make a transfer</h2>
+<form action="/account" method="post">
+    Bank account: <input type="number" name="bank_account">
+    Amount: <input type="number" name="amount" >
+    <button type="submit">Send</button>
+</form>
+
+<h2>History of the transactions:</h2>
+    <table border>
+        <tr>
+            <td>Date</td>
+            <td>Account</td>
+            <td>Amount</td>
+        </tr>
+        {% for record in history %}
+            <tr>
+                {% for pos in record %}
+                    <td>{{ pos }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

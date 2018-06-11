@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Band List:</h3>
+    <ul>
+    {% for band in search_results %}
+        <li>{{ band }}</li>
+    {% endfor %}
+    </ul>
+<form action="/bands" method="get">
+    <input type="text" name="bands">
+    <button type="submit">Search</button>
+</form>
+
+</body>
+</html>

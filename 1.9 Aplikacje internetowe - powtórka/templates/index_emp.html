@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees</title>
+</head>
+<body>
+
+<h3>Table showing all Employees</h3>
+
+    <table border>
+        <tr>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Surname</td>
+            <td>Salary</td>
+            <td>Role</td>
+            <td>Link </td>
+        </tr>
+        {% for emp in list_of_details %}
+            <tr>
+                {% for item in emp %}
+                    <td>{{item}}</td>
+                {% endfor %}
+                    <td><a href="/employees/{{emp[0]}}">Details</a> </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+</body>
+</html>
